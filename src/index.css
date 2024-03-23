@@ -1,0 +1,14 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    scroll-behavior: smooth;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+body {
+    background-color: rgb(23, 23, 23);
+}

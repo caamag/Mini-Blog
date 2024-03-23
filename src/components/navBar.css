@@ -1,0 +1,25 @@
+nav ul {
+    width: 50%;
+    height: 80px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav a {
+    margin: 20px;
+    font-size: 1.6rem;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav li {
+    list-style: none;
+    transition: 250ms;
+}
+
+nav li:hover {
+    padding-top: 10px;
+}
