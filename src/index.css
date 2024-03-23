@@ -6,9 +6,54 @@
 
 html {
     font-size: 62.5%;
-    font-family: 'Times New Roman', Times, serif;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: bold;
+    font-style: normal;
 }
 
 body {
     background-color: rgb(23, 23, 23);
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+.container {
+    width: 100%;
+    height: 90vh;
+}
+
+.active {
+    background-color: white;
+    padding: 10px 15px 10px 15px;
+    color: rgb(41, 41, 41);
+}
+
+
+/*form*/
+.form {
+    width: 60%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+input {
+    width: 300px;
+    padding: 10px;
+    border: none;
+    margin-bottom: 15px;
+}
+
+label {
+    text-align: left;
+}
+
+input:focus {
+    outline: none;
 }
