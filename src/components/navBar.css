@@ -11,7 +11,7 @@ nav ul {
 nav a {
     margin: 20px;
     font-size: 1.6rem;
-    color: white;
+    color: rgb(0, 0, 0);
     text-decoration: none;
     font-weight: bold;
     transition: 250ms;
