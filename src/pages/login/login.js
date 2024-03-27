@@ -9,7 +9,7 @@ function Login() {
     const formMenuClass = signMenu ? 'form-menu' : 'form-menu form-menu-changed';
 
     const menuTitleText = signMenu ? <>DON'T <br /> HAVE ACCOUNT?</> : <>SHARE <br /> YOUR LIFE</>
-    const menuSubTitle = signMenu ? <>Enter your details <br /> and register</> : <>Tell Stories</>
+    const menuSubTitle = signMenu ? <>Enter your details <br /> and register.</> : <>Tell Stories <br /> to the world.</>
 
     return <div className="container">
 

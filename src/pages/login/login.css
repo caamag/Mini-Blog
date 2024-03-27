@@ -53,3 +53,17 @@
     background-color: rgb(255, 255, 255);
     color: rgb(68, 67, 65);
 }
+
+
+/*mobile*/
+
+@media screen and (max-width: 1350px) {
+    .sign-up-container{
+        margin-top: 50px;
+        height: 65vh;
+    }
+
+    .form-menu button{
+        margin-top: 80px;
+    }
+}
