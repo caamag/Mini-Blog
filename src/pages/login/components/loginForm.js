@@ -10,7 +10,7 @@ function LoginForm() {
 
     return <form className='form login-form'>
 
-        <label>
+        <label><br /><br />
             EMAIL ADRESS<br /><br />
             <input
                 type="email"

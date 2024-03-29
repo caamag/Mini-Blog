@@ -7,8 +7,26 @@ function RegisterForm() {
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [name, setName] = useState('')
+
+    function register() {
+
+
+
+    }
 
     return <form className='form register-form'>
+
+        <label>
+            NAME<br /><br />
+            <input
+                type="text"
+                value={name}
+                placeholder='INSERT YOUR FIRST NAME:'
+                onChange={(e) => { setName(e.target.value) }}
+                required
+            /><br />
+        </label>
 
         <label>
             EMAIL ADRESS<br /><br />
