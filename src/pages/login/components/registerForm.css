@@ -1,0 +1,40 @@
+.register-form {
+    position: absolute;
+    right: 0%;
+}
+
+.register-form label {
+    color: rgb(209, 209, 209);
+    width: 100%;
+    text-align: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+.register-form input {
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid rgb(224, 224, 224);
+    animation: fadeInLoginForm 500ms;
+}
+
+.register-form input::placeholder {
+    color: rgb(209, 209, 209);
+    font-size: 1.4rem;
+}
+
+.register-form button {
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 60px;
+    padding: 20px 20px;
+    background-color: rgb(151, 115, 101);
+    color: white;
+    font-weight: bold;
+    transition: 250ms;
+    animation: fadeInLoginFormBtn 800ms;
+}
+
+.register-form button:hover {
+    width: 260px;
+}

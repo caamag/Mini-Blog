@@ -31,6 +31,7 @@ h3 {
 .container {
     width: 100%;
     max-width: 1450px;
+    max-height: 460px;
     margin: 0 auto;
 }
 
@@ -42,9 +43,19 @@ h3 {
 
 
 /*form*/
+.form {
+    width: 60%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
 input {
     border: none;
     padding: 20px 10px 20px 10px;
+    font-size: 1.6rem;
 }
 
 input:focus {
@@ -55,4 +66,5 @@ button {
     padding: 10px;
     border: none;
     font-size: 1.6rem;
+    cursor: pointer;
 }
