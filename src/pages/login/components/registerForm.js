@@ -1,4 +1,5 @@
 
+import { useAuthentication } from '../../../hooks/useAuthernticate';
 import './registerForm.css';
 
 import { useState } from "react";
@@ -7,15 +8,27 @@ function RegisterForm() {
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
-    const [name, setName] = useState('')
+    const [name, setName] = useState('');
 
-    function register() {
+    const { createUser, error: authError, loading } = useAuthentication();
 
+    async function handleSubmit(e) {
 
+        e.preventDefault();
+
+        const user = {
+            name,
+            email,
+            pass
+        }
+
+        const res = await createUser(user);
+
+        console.log(res);
 
     }
 
-    return <form className='form register-form'>
+    return <form className='form register-form' onSubmit={handleSubmit}>
 
         <label>
             NAME<br /><br />
