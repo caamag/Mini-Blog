@@ -4,7 +4,7 @@
 }
 
 .login-form label {
-    color: rgb(209, 209, 209);
+    color: rgb(188, 188, 188);
     width: 100%;
     text-align: left;
     margin-left: 50px;
@@ -14,12 +14,12 @@
 .login-form input {
     width: 70%;
     margin: 0 auto;
-    border: 1px solid rgb(224, 224, 224);
+    border: 1px solid rgb(188, 188, 188);
     animation: fadeInLoginForm 500ms;
 }
 
 .login-form input::placeholder {
-    color: rgb(209, 209, 209);
+    color: rgb(188, 188, 188);
     font-size: 1.4rem;
 }
 
@@ -61,5 +61,23 @@
     100% {
         opacity: 1;
         margin-left: 50px;
+    }
+}
+
+/*querys*/
+@media screen and (max-width: 850px) {
+    .login-form {
+        width: 100%;
+        height: 60%;
+        bottom: 0%;
+    }
+
+    .login-form button {
+        margin-top: 10px;
+        width: 69%;
+    }
+
+    .login-form input {
+        width: 60%;
     }
 }

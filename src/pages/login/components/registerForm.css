@@ -4,7 +4,7 @@
 }
 
 .register-form label {
-    color: rgb(209, 209, 209);
+    color: rgb(188, 188, 188);
     width: 100%;
     text-align: left;
     margin-left: 50px;
@@ -14,17 +14,17 @@
 .register-form input {
     width: 70%;
     margin: 0 auto;
-    border: 1px solid rgb(224, 224, 224);
+    border: 1px solid rgb(188, 188, 188);
     animation: fadeInLoginForm 500ms;
 }
 
 .register-form input::placeholder {
-    color: rgb(209, 209, 209);
+    color: rgb(188, 188, 188);
     font-size: 1.4rem;
 }
 
 .register-form button {
-    width: 250px;
+    width: 242px;
     margin-left: 50px;
     padding: 20px 20px;
     background-color: rgb(151, 115, 101);
@@ -36,4 +36,18 @@
 
 .register-form button:hover {
     width: 260px;
+}
+
+
+/*querys*/
+@media screen and (max-width: 850px) {
+    .register-form {
+        height: 60%;
+        bottom: 0%;
+        left: 0px;
+    }
+
+    .register-form input {
+        width: 100%;
+    }
 }
