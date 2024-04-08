@@ -31,25 +31,36 @@ export const useAuthentication = () => {
     async function createUser(data) {
         checkIfIsCanceled();
         setLoading(true);
+        setError(null);
 
         try {
             const { user } = await createUserWithEmailAndPassword(
                 auth,
                 data.email,
-                data.password
+                data.pass
             )
 
             await updateProfile(user, {
                 displayName: data.displayName
             })
 
+            setLoading(false);
             return user;
 
         } catch (error) {
             console.log(error.message);
-        }
 
-        setLoading(false);
+            let systemMessageError = '';
+            if (error.message.includes('Password')) {
+                systemMessageError = 'A senha precisa conter ao menos seis caracteres';
+            } else if (error.message.includes('email-already')) {
+                systemMessageError = 'Email já cadastrado';
+            } else {
+                systemMessageError = 'Ocorreu algum erro. Tente novamente mais tarde.'
+            }
+            setLoading(false);
+            setError(systemMessageError);
+        }
     };
 
     useEffect(() => {

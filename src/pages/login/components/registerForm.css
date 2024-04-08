@@ -38,6 +38,19 @@
     width: 260px;
 }
 
+.auth-error {
+    position: absolute;
+    width: 400px;
+    top: 5px;
+    left: 50px;
+    right: 0px;
+    margin: auto;
+    font-size: 1.2rem;
+    padding: 10px;
+    background-color: rgba(245, 56, 56, 0.932);
+    color: white;
+}
+
 
 /*querys*/
 @media screen and (max-width: 850px) {

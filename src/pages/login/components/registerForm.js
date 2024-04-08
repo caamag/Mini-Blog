@@ -2,7 +2,7 @@
 import { useAuthentication } from '../../../hooks/useAuthernticate';
 import './registerForm.css';
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 function RegisterForm() {
 
@@ -10,11 +10,14 @@ function RegisterForm() {
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
 
+    const [error, setError] = useState("")
+
     const { createUser, error: authError, loading } = useAuthentication();
 
     async function handleSubmit(e) {
-
         e.preventDefault();
+
+        setError("");
 
         const user = {
             name,
@@ -23,10 +26,15 @@ function RegisterForm() {
         }
 
         const res = await createUser(user);
-
         console.log(res);
-
     }
+
+    useEffect(() => {
+        if (authError) {
+            setError(authError);
+            console.log(authError);
+        }
+    }, [authError]);
 
     return <form className='form register-form' onSubmit={handleSubmit}>
 
@@ -63,7 +71,10 @@ function RegisterForm() {
             /><br />
         </label>
 
-        <button>REGISTER</button>
+        {loading && <button>LOADING...</button>}
+        {!loading && <button>REGISTER</button>}
+
+        {error && <p className='auth-error'>{authError}</p>}
 
     </form>
 
