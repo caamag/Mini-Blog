@@ -15,6 +15,8 @@ import { useAuthentication } from './hooks/useAuthernticate';
 import Home from './pages/home/home';
 import About from './pages/about/about';
 import Login from './pages/login/login';
+import CreatePost from './pages/createPost/createPost';
+import Dashboard from './pages/dashboard/dashboard';
 
 //components
 import NavBar from './components/navBar';
@@ -48,6 +50,8 @@ function App() {
             <Route path='/' element={<Home />} >home</Route>
             <Route path='/about' element={<About />} ></Route>
             <Route path='/login' element={<Login />} ></Route>
+            <Route path='/post/create' element={<CreatePost />} ></Route>
+            <Route path='/dashboard' element={<Dashboard />} ></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
