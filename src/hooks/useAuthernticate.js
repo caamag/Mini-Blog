@@ -63,17 +63,48 @@ export const useAuthentication = () => {
         }
     };
 
+    //login
+    async function login(data) {
+        checkIfIsCanceled();
+        setLoading(true);
+        setError(false);
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.pass);
+            setLoading(false);
+        } catch (error) {
+            let systemMessageError = '';
+            if (error.message.includes('invalid-credential')) {
+                systemMessageError = 'Usuário não localizado.';
+                console.log(error.message);
+            } else if (error.message.includes("wrong-password")) {
+                systemMessageError = 'Senha incorreta.';
+                console.log(error.message);
+            } else {
+                systemMessageError = 'Erro ao logar, tente novamente';
+                console.log(error.message);
+            }
+            setError(systemMessageError);
+            setLoading(false);
+        }
+    }
+
+    //logout
+    function logOut() {
+        checkIfIsCanceled();
+        signOut(auth);
+    }
+
     useEffect(() => {
-
         return () => setCancel(true);
-
-    }, [])
+    }, []);
 
     return {
         auth,
         createUser,
         error,
-        loading
+        loading,
+        logOut,
+        login
     }
 
 }

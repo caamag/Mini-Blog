@@ -25,3 +25,10 @@ nav li {
 nav li:hover {
     padding-top: 10px;
 }
+
+nav button {
+    font-size: 1.6rem;
+    font-weight: bold;
+    background: none;
+    transition: 250ms;
+}

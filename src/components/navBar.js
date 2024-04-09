@@ -8,7 +8,7 @@ import { NavLink } from 'react-router-dom';
 function NavBar() {
 
     const { user } = useAuthValue();
-    console.log(user);
+    const { logOut } = useAuthentication();
 
     return <nav>
         <ul>
@@ -19,6 +19,7 @@ function NavBar() {
                 <li><NavLink to='/dashboard' className='nav-link'>DASHBOARD</NavLink></li>
             </>}
             {!user && <li><NavLink to='/login' className='nav-link'>LOGIN</NavLink></li>}
+            {user && <li><button onClick={() => { logOut() }}>SIGN OUT</button></li>}
         </ul>
     </nav>
 

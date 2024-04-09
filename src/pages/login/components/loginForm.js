@@ -1,14 +1,36 @@
 
 import './loginform.css';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuthentication } from '../../../hooks/useAuthernticate';
 
 function LoginForm() {
 
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
+    const [error, setError] = useState("");
 
-    return <form className='form login-form'>
+    const { login, error: authError, loading } = useAuthentication();
+
+    useEffect(() => {
+        if (authError) {
+            setError(authError)
+        }
+    }, [authError]);
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+        setError("");
+
+        const user = {
+            email: email,
+            pass: pass
+        };
+
+        const res = await login(user);
+    }
+
+    return <form className='form login-form' onSubmit={handleSubmit}>
 
         <label><br /><br />
             EMAIL ADRESS<br /><br />
@@ -32,6 +54,7 @@ function LoginForm() {
             /><br />
         </label>
 
+        {error && <p className='auth-error'>{authError}</p>}
 
         <button>SIGN IN</button>
 

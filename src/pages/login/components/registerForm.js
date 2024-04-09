@@ -20,9 +20,9 @@ function RegisterForm() {
         setError("");
 
         const user = {
-            name,
-            email,
-            pass
+            name: name,
+            email: email,
+            pass: pass
         }
 
         const res = await createUser(user);
