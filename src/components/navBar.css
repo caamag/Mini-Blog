@@ -32,3 +32,39 @@ nav button {
     background: none;
     transition: 250ms;
 }
+
+
+.logout-confirm {
+    width: 350px;
+    box-shadow: 2px 2px 15px rgb(198, 198, 198);
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    top: 300px;
+    margin: auto;
+    padding: 20px;
+    animation: fadeInScale 500ms;
+}
+
+.logout-confirm h2 {
+    font-size: 2rem;
+    text-align: center;
+}
+
+.logout-confirm div {
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.logout-confirm button {
+    width: 150px;
+    background-color: rgb(232, 232, 232);
+    transition: 250ms;
+}
+
+.logout-confirm button:hover {
+    background-color: rgb(151, 115, 101);
+    color: white;
+}

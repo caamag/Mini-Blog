@@ -68,3 +68,14 @@ button {
     font-size: 1.6rem;
     cursor: pointer;
 }
+
+/*animations*/
+@keyframes fadeInScale {
+    0% {
+        scale: 0;
+    }
+
+    100% {
+        scale: 1;
+    }
+}
