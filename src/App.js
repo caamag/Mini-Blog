@@ -49,9 +49,9 @@ function App() {
           <Routes>
             <Route path='/' element={<Home />} >home</Route>
             <Route path='/about' element={<About />} ></Route>
-            <Route path='/login' element={<Login />} ></Route>
-            <Route path='/post/create' element={<CreatePost />} ></Route>
-            <Route path='/dashboard' element={<Dashboard />} ></Route>
+            <Route path='/login' element={!user ? <Login /> : <Navigate to="/" />} ></Route>
+            <Route path='/post/create' element={user ? <CreatePost /> : <Navigate to="/login" />} ></Route>
+            <Route path='/dashboard' element={user ? <Dashboard /> : <Navigate to="/login" />} ></Route>
           </Routes>
           <Footer />
         </BrowserRouter>
