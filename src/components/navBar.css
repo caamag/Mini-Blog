@@ -37,6 +37,7 @@ nav button {
 .logout-confirm {
     width: 350px;
     box-shadow: 2px 2px 15px rgb(198, 198, 198);
+    background-color: white;
     position: absolute;
     left: 0px;
     right: 0px;
