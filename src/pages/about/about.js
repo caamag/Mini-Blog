@@ -26,7 +26,9 @@ function About() {
                     <li>Share new posts</li>
                     <li>Make comments</li>
                 </ul>
-                <button>REPOSITORY</button>
+                <button onClick={() => {
+                    window.location.href === 'https://github.com/caamag/Mini-Blog'
+                }}>REPOSITORY</button>
             </div>
 
             <div className='technologies-icons'>
