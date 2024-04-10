@@ -35,6 +35,12 @@ h3 {
     margin: 0 auto;
 }
 
+.content {
+    width: 100%;
+    height: auto;
+    padding: 20px;
+}
+
 .active {
     background-color: rgb(151, 115, 101);
     padding: 10px 15px 10px 15px;
