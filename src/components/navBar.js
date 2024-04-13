@@ -2,9 +2,13 @@ import './navBar.css';
 
 import { useAuthentication } from '../hooks/useAuthernticate';
 import { useAuthValue } from '../context/authcontext';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import { NavLink } from 'react-router-dom';
+import { clearIndexedDbPersistence } from 'firebase/firestore';
+
+import NavMenuClose from './imgs/menu-close.png';
+import NavMenuOpen from './imgs/menu-open.png';
 
 function NavBar() {
 
@@ -13,7 +17,28 @@ function NavBar() {
     const { user } = useAuthValue();
     const { logOut } = useAuthentication();
 
-    return <nav>
+    const [navigate, setNavigate] = useState(false);
+    const windowWidth = window.innerWidth;
+
+    const navigateClass = navigate ? 'navigate' : 'navigate navigate-mobile-invisible';
+
+    const links = document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', () => {
+            setNavigate(false)
+        })
+    })
+
+
+    return <nav className={navigateClass}>
+
+        {!navigate && <button className='nav-menu-btn' onClick={() => { setNavigate(true) }}>
+            <img src={NavMenuOpen} className='nav-menu' />
+        </button>}
+
+        {navigate && <button className='nav-menu-btn' onClick={() => { setNavigate(false) }}>
+            <img src={NavMenuClose} className='nav-menu' />
+        </button>}
+
         <ul>
             {user && <li><NavLink to='/' className='nav-link'>HOME</NavLink></li>}
             <li><NavLink to='/about' className='nav-link'>ABOUT</NavLink></li>
