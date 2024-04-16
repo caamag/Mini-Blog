@@ -27,7 +27,7 @@
 
 .create-post-container label {
     color: rgb(126, 126, 126);
-    margin-left: 50px;
+    margin-left: 60px;
     font-size: 1.4rem;
     font-weight: 500;
 }
@@ -43,15 +43,15 @@
 }
 
 #image-input {
-    animation: fadeInInputCreatePost 600ms;
+    animation: fadeInInputCreatePost 650ms;
 }
 
 #body-input {
-    animation: fadeInInputCreatePost 700ms;
+    animation: fadeInInputCreatePost 750ms;
 }
 
 #tags-input {
-    animation: fadeInInputCreatePost 800ms;
+    animation: fadeInInputCreatePost 850ms;
 }
 
 .create-post-container input::placeholder {
@@ -81,5 +81,44 @@
 
     100% {
         margin-left: 50px;
+    }
+}
+
+/*querys*/
+@media screen and (max-width: 650px) {
+    .create-post-container {
+        width: 100%;
+    }
+
+    .create-post-container h1,
+    .create-post-container p {
+        text-align: left;
+        margin-left: 15px;
+        text-indent: 0px;
+    }
+
+    .create-post-container input {
+        width: 80%;
+        margin-left: 15px;
+        animation: fadeInInputCreatePost 0ms;
+    }
+
+    .create-post-container label {
+        margin-left: 15px;
+    }
+
+    .create-post-container button {
+        width: 88%;
+        margin-left: 15px;
+    }
+
+    .create-post-container button:hover {
+        width: 88%;
+    }
+
+    #title-input,
+    #image-input,
+    #body-input #tags-input {
+        animation: none;
     }
 }
