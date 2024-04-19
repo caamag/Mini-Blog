@@ -14,6 +14,7 @@ function CreatePost() {
     const [formError, setFormError] = useState(false);
     const [tags, setTags] = useState('');
     const { user } = useAuthValue();
+    const navigate = useNavigate();
 
     const [error, setError] = useState("")
 
@@ -30,16 +31,14 @@ function CreatePost() {
         try {
             new URL(image);
         } catch (error) {
-            alert('A imagem precisa ser uma URL...')
-            setFormError(true);
+            alert('A imagem precisa ser uma URL...');
+            return;
         }
 
         //create tag array 
         const tagsArray = tags.split(",").map(tag => {
-            tag.trim().toLowerCase();
+            return tag.trim().toLowerCase();
         })
-
-        if (formError) { return }
 
         inserDocument({
             title,
@@ -51,6 +50,7 @@ function CreatePost() {
         });
 
         //redirect to home page
+        navigate("/")
     }
 
     return <div className="container create-post-container">
@@ -98,7 +98,7 @@ function CreatePost() {
             </label><br />
 
             <label>
-                TAGS:<br />
+                TAGS WITH "," :<br />
                 <input
                     type="text"
                     name='tags'
