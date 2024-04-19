@@ -4,22 +4,53 @@ import { useAuthentication } from '../../hooks/useAuthernticate';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthValue } from '../../context/authcontext';
+import { useCreateContent } from '../../hooks/useCreateContent';
 
 function CreatePost() {
 
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
     const [body, setBody] = useState('');
-    const [formError, setFormError] = useState('');
+    const [formError, setFormError] = useState(false);
     const [tags, setTags] = useState('');
+    const { user } = useAuthValue();
 
     const [error, setError] = useState("")
 
     const { error: authError, loading } = useAuthentication();
 
+    const { inserDocument, response } = useCreateContent('posts');
+
 
     function handleSubmit(e) {
         e.preventDefault();
+
+        setFormError(false);
+        //url image verification
+        try {
+            new URL(image);
+        } catch (error) {
+            alert('A imagem precisa ser uma URL...')
+            setFormError(true);
+        }
+
+        //create tag array 
+        const tagsArray = tags.split(",").map(tag => {
+            tag.trim().toLowerCase();
+        })
+
+        if (formError) { return }
+
+        inserDocument({
+            title,
+            image,
+            body,
+            tagsArray,
+            userID: user.uid,
+            createdBy: user.displayName
+        });
+
+        //redirect to home page
     }
 
     return <div className="container create-post-container">
@@ -79,10 +110,10 @@ function CreatePost() {
                 />
             </label><br />
 
-            {loading && <button>LOADING...</button>}
-            {!loading && <button>REGISTER</button>}
+            {response.loading && <button>LOADING...</button>}
+            {!response.loading && <button>REGISTER</button>}
 
-            {error && <p className='auth-error'>{authError}</p>}
+            {response.error && <p className='auth-error'>{response.error}</p>}
         </form>
     </div>
 
