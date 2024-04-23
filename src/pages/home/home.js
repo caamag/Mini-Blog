@@ -18,9 +18,9 @@ function Home() {
 
     return <div className="container">
 
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='search-form'>
             <input type="text"
-                placeholder='Search by Tags'
+                placeholder='Search by Tags:'
                 value={query}
                 onChange={(e) => { setQuery(e.target.value) }} />
 
@@ -30,7 +30,7 @@ function Home() {
         <div className='posts-container'>
 
             {posts && posts.length === 0 && (
-                <div className='post-content'>
+                <div className='post-null'>
                     <h3>No posts made yet...</h3>
                     <Link to={'/post/create'}>Create a new POST</Link>
                 </div>
