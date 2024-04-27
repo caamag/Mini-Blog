@@ -51,3 +51,87 @@
 .post-null a:hover {
     background-color: rgb(123, 90, 77);
 }
+
+.post-container {
+    position: relative;
+    width: 50%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.post-author-content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.post-author-content img {
+    width: 30px !important;
+    height: auto;
+    margin-right: 10px;
+}
+
+.post-author-content button {
+    position: absolute;
+    background: none;
+    padding: 0px;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    margin: auto;
+}
+
+.img-url-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: 0px;
+    top: 38px;
+    background-color: white;
+    height: 35px;
+    width: 120px;
+    padding: 5px;
+}
+
+.img-url-container:hover {
+    background-color: rgb(240, 240, 240);
+}
+
+.img-url-container a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: rgb(151, 115, 101);
+}
+
+.post-container h3 {
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.post-container h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.post-container img {
+    width: 100%;
+    height: auto;
+    max-height: 600px;
+}
+
+.red-heart {
+    animation: likeAnimation 500ms infinite;
+}
+
+@keyframes likeAnimation {
+    0% {
+        scale: 1.1;
+    }
+
+    100% {
+        scale: 1;
+    }
+}

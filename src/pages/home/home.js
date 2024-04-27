@@ -1,4 +1,9 @@
 import './home.css'
+//imgs
+import profileImage from './assets/account.png';
+import points from './assets/three-points.png';
+import whiteHeart from './assets/heart-without-background.png';
+import redHeart from './assets/red-heart.png';
 
 //hooks
 import { useNavigate, Link } from 'react-router-dom';
@@ -22,8 +27,9 @@ const db = getFirestore(firebaseApp);
 function Home() {
 
     const [query, setQuery] = useState('');
-    const navigate = useNavigate();
     const [posts, setPosts] = useState([]);
+    const [imageDestiny, setImageDestiny] = useState(false);
+    const [heartLike, setHeartLike] = useState(false);
 
     //get posts
     useEffect(() => {
@@ -43,9 +49,6 @@ function Home() {
         fetchPosts();
     }, [db]);
 
-    console.log(posts);
-
-
     function handleSubmit(e) {
         e.preventDefault();
     }
@@ -63,7 +66,39 @@ function Home() {
 
         <div className='posts-container'>
 
+            {posts.map((post) => (
+                <section key={post.id} className='post-container'>
+                    <div className='post-author-content'>
 
+                        <img src={profileImage} alt="profile image" />
+                        <h4>{post.userName}</h4>
+                        <button onClick={() => {
+                            if (imageDestiny) {
+                                setImageDestiny(false)
+                            } else {
+                                setImageDestiny(true)
+                            }
+                        }}><img src={points} alt="" />
+                        </button>
+
+                        {imageDestiny && <div className='img-url-container'>
+                            <a href={post.image} target='blank'>Ir para a imagem</a>
+                        </div>}
+
+                    </div>
+
+                    <img src={post.image} alt="" /><br /><br />
+
+                    <div className='post-author-content'>
+                        {!heartLike && <button onClick={() => { setHeartLike(true) }}>
+                            <img src={whiteHeart} alt="" />
+                        </button>}
+                        {heartLike && <button onClick={() => { setHeartLike(false) }}>
+                            <img src={redHeart} alt="" className='red-heart' />
+                        </button>}
+                    </div>
+                </section>
+            ))}
 
         </div>
 

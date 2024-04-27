@@ -10,6 +10,7 @@ function CreatePost() {
 
     const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
+    const [userName, setUserName] = useState('');
     const [body, setBody] = useState('');
     const [formError, setFormError] = useState(false);
     const [tags, setTags] = useState('');
@@ -44,6 +45,7 @@ function CreatePost() {
             title,
             image,
             body,
+            userName,
             tagsArray,
             userID: user.uid,
             createdBy: user.displayName
@@ -59,6 +61,19 @@ function CreatePost() {
 
         <form onSubmit={handleSubmit}>
             <label>
+                AUTHOR:<br />
+                <input
+                    type="text"
+                    name='title'
+                    placeholder='Author of this post'
+                    required
+                    onChange={(e) => { setUserName(e.target.value) }}
+                    value={userName}
+                    id='title-input'
+                />
+            </label><br />
+
+            <label>
                 TITLE:<br />
                 <input
                     type="text"
@@ -72,6 +87,19 @@ function CreatePost() {
             </label><br />
 
             <label>
+                CONTENT:<br />
+                <input
+                    type="text"
+                    name='body'
+                    placeholder='Insert the body for the post'
+                    required
+                    onChange={(e) => { setBody(e.target.value) }}
+                    value={body}
+                    id='body-input'
+                />
+            </label><br />
+
+            <label>
                 IMAGE:<br />
                 <input
                     type="text"
@@ -81,19 +109,6 @@ function CreatePost() {
                     onChange={(e) => { setImage(e.target.value) }}
                     value={image}
                     id='image-input'
-                />
-            </label><br />
-
-            <label>
-                BODY:<br />
-                <input
-                    type="text"
-                    name='body'
-                    placeholder='Insert the body for the post'
-                    required
-                    onChange={(e) => { setBody(e.target.value) }}
-                    value={body}
-                    id='body-input'
                 />
             </label><br />
 
@@ -114,7 +129,7 @@ function CreatePost() {
             {!response.loading && <button>REGISTER</button>}
 
             {response.error && <p className='auth-error'>{response.error}</p>}
-        </form>
+        </form><br /><br />
     </div>
 
 }
