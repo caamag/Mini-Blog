@@ -39,7 +39,9 @@ function Home() {
                 const querySnapshot = await getDocs(postCollection);
                 const postsData = querySnapshot.docs.map(doc => ({
                     id: doc.id,
-                    ...doc.data()
+                    ...doc.data(),
+                    imageDestiny: false, 
+                    heartLike: false
                 }));
                 setPosts(postsData);
             } catch (error) {
