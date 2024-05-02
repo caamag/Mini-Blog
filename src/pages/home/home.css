@@ -138,7 +138,8 @@
 
 .post-body {
     font-size: 1.2rem;
-    max-width: 60%;
+    max-width: 80%;
+    text-indent: 15px;
 }
 
 .comment-form {
@@ -148,6 +149,7 @@
     display: flex;
     left: 0px;
     top: 23px;
+    background-color: white;
 }
 
 .comment-form input {

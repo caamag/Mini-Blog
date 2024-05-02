@@ -45,8 +45,6 @@ function Home() {
                     ...doc.data(),
                     isLiked: false,
                     imageDestiny: false,
-                    comment: false,
-                    comments: doc.data().comments || [],
                 }));
                 setPosts(postsData);
             } catch (error) {
@@ -72,41 +70,6 @@ function Home() {
             }
             return post;
         }));
-    }
-
-    function openComment(postId) {
-        setPosts(prevPost => prevPost.map(post => {
-            if (post.id === postId) {
-                return { ...post, comment: !post.comment };
-            };
-            return post;
-        }));
-    }
-
-    function addCommentPost(postId, commentText) {
-        setPosts(prevPost => prevPost.map(post => {
-            if (post.id === postId) {
-                return {
-                    ...post,
-                    comments: [...post.comments, commentText]
-                }
-            }
-            return post;
-        }));
-
-        const postRef = doc(db, 'posts', postId);
-        updateDoc(postRef, {
-            comments: firebase.firestore.FieldValue.arrayUnion(commentText)
-        });
-    }
-
-    function handleSubmitComment(postId, e) {
-        e.preventDefault();
-        if (newComment.trim() === '') {
-            return;
-        }
-        addCommentPost(postId, newComment);
-        setNewComment('');
     }
 
     return <div className="container">
@@ -137,20 +100,7 @@ function Home() {
                                 <img src={whiteHeart} alt="" />
                             )}
                         </button>
-                        <button className='make-comment-btn' onClick={() => { openComment(post.id) }}>
-                            <img src={commentIcon} alt="" />
-                        </button>
                         <p className='post-body'>{post.body}</p><br />
-                        {post.comment && <form className='comment-form' onSubmit={(e) => handleSubmitComment(post.id, e)}>
-                            <input
-                                type="text"
-                                placeholder='Insert your new comment'
-                                value={newComment}
-                                onChange={(e) => { setNewComment(e.target.value) }}
-                            />
-                            <button type='submit'>Submit</button>
-                        </form>}
-                        <p>{post.comments}</p>
                     </div>
                 </section>
             ))}

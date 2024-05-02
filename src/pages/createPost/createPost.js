@@ -57,7 +57,8 @@ function CreatePost() {
 
     return <div className="container create-post-container">
         <h1>Create <span>Post</span></h1>
-        <p>Share photos, text posts, ideas and anything content in your mind.</p>
+        <p>Share photos, text posts, ideas and anything content in your mind.<br />
+            PS: Only admins can delete POSTS.</p>
 
         <form onSubmit={handleSubmit}>
             <label>
