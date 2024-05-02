@@ -44,7 +44,6 @@ function NavBar() {
             <li><NavLink to='/about' className='nav-link'>ABOUT</NavLink></li>
             {user && <>
                 <li><NavLink to='/post/create' className='nav-link'>NEW POST</NavLink></li>
-                <li><NavLink to='/dashboard' className='nav-link'>DASHBOARD</NavLink></li>
             </>}
             {!user && <li><NavLink to='/login' className='nav-link'>LOGIN</NavLink></li>}
             {user && <li><button onClick={() => { setConfirmSignOut(true) }}>SIGN OUT</button></li>}

@@ -87,6 +87,12 @@ button {
     cursor: pointer;
 }
 
+footer {
+    width: 100%;
+    max-width: 1450px;
+    margin: 0 auto;
+}
+
 /*animations*/
 @keyframes fadeInScale {
     0% {

@@ -175,3 +175,48 @@
         scale: 1;
     }
 }
+
+/*querys*/
+@media screen and (max-width: 600px) {
+    .posts-container {
+        margin-top: 80px;
+    }
+
+    .post-container {
+        width: 100%;
+    }
+
+    .post-body {
+        font-size: 0.8rem;
+    }
+
+    .post-author-content img {
+        width: 25px !important;
+    }
+
+    .post-author-content {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+    }
+}
+
+@media screen and (max-width: 1000px) and (min-width: 601px) {
+    .posts-container {
+        margin-top: 80px;
+    }
+
+    .post-body {
+        font-size: 1rem;
+    }
+
+    .post-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    .posts-container {
+        margin-top: 80px;
+    }
+}

@@ -1,0 +1,31 @@
+.footer {
+    margin-top: 100px;
+    text-align: center;
+}
+
+.contacts {
+    width: 100%;
+    padding-bottom: 20px;
+    border-bottom: 0.5px solid rgb(198, 198, 198);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+}
+
+.contacts img {
+    width: 30px;
+    height: auto;
+    transition: 150ms;
+    filter: invert(50%);
+    margin: 5px;
+}
+
+.contacts img:hover {
+    filter: invert(0%);
+}
+
+.footer p {
+    color: gray;
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+}
