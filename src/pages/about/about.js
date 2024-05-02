@@ -24,7 +24,7 @@ function About() {
                     <li>Create a new account</li>
                     <li>Sign In/Sign Out</li>
                     <li>Share new posts</li>
-                    <li>Make comments</li>
+                    <li>Like and dislike</li>
                 </ul>
                 <button>REPOSITORY</button>
             </div>

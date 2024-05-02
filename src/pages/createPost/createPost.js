@@ -8,9 +8,9 @@ import { useCreateContent } from '../../hooks/useCreateContent';
 
 function CreatePost() {
 
-    const [title, setTitle] = useState('');
     const [image, setImage] = useState('');
     const [userName, setUserName] = useState('');
+    const [comments, setComments] = useState([]);
     const [body, setBody] = useState('');
     const [formError, setFormError] = useState(false);
     const [tags, setTags] = useState('');
@@ -42,12 +42,12 @@ function CreatePost() {
         })
 
         inserDocument({
-            title,
             image,
             body,
             userName,
             tagsArray,
             userID: user.uid,
+            comments,
             createdBy: user.displayName
         });
 
@@ -69,19 +69,6 @@ function CreatePost() {
                     required
                     onChange={(e) => { setUserName(e.target.value) }}
                     value={userName}
-                    id='title-input'
-                />
-            </label><br />
-
-            <label>
-                TITLE:<br />
-                <input
-                    type="text"
-                    name='title'
-                    placeholder='Write a caption'
-                    required
-                    onChange={(e) => { setTitle(e.target.value) }}
-                    value={title}
                     id='title-input'
                 />
             </label><br />
@@ -109,19 +96,6 @@ function CreatePost() {
                     onChange={(e) => { setImage(e.target.value) }}
                     value={image}
                     id='image-input'
-                />
-            </label><br />
-
-            <label>
-                TAGS WITH "," :<br />
-                <input
-                    type="text"
-                    name='tags'
-                    placeholder='Insert tags for the post'
-                    required
-                    onChange={(e) => { setTags(e.target.value) }}
-                    value={tags}
-                    id='tags-input'
                 />
             </label><br />
 

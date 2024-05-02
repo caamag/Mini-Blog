@@ -81,6 +81,11 @@
     top: 0px;
     bottom: 0px;
     margin: auto;
+    transition: 150ms;
+}
+
+.post-author-content button:hover {
+    scale: 1.05;
 }
 
 .img-url-container {
@@ -125,6 +130,38 @@
 
 .red-heart {
     animation: likeAnimation 500ms infinite;
+}
+
+.make-comment-btn {
+    right: 50px !important;
+}
+
+.post-body {
+    font-size: 1.2rem;
+    max-width: 60%;
+}
+
+.comment-form {
+    position: absolute;
+    width: 250px;
+    height: 30px;
+    display: flex;
+    left: 0px;
+    top: 23px;
+}
+
+.comment-form input {
+    padding: 0px;
+    padding-bottom: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-bottom: 0.5px solid black;
+}
+
+.comment-form button {
+    background-color: rgb(151, 115, 101);
+    color: white;
+    padding: 5px 3px 5px 3px;
 }
 
 @keyframes likeAnimation {
