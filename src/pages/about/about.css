@@ -70,6 +70,11 @@
     width: 170px;
 }
 
+.about-content a{
+    color: white;
+    text-decoration: none;
+}
+
 .technologies-icons {
     animation: fadeInTechnologies 500ms;
 }
@@ -122,6 +127,12 @@
 @media screen and (max-width: 950px) {
     .about-content {
         width: 80%;
+    }
+}
+
+@media screen and (max-width: 1350px){
+    .content{
+        padding: 0px;
     }
 }
 

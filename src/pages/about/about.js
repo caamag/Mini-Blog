@@ -26,15 +26,15 @@ function About() {
                     <li>Share new posts</li>
                     <li>Like and dislike</li>
                 </ul>
-                <button>REPOSITORY</button>
+                <button><a href='https://github.com/caamag/Mini-Blog' target='blank_'>REPOSITORY</a></button>
             </div>
 
             <div className='technologies-icons'>
                 <h3>TECHNOLOGIES</h3>
                 <ul>
-                    <li><img src={firebaseIcon} alt="" />Firebase</li>
-                    <li><img src={reactIcon} alt="" />React.js</li>
-                    <li><img src={gitIcon} alt="" />Git</li>
+                    <li><img src={firebaseIcon} alt="firebase icon" />Firebase</li>
+                    <li><img src={reactIcon} alt="react icon" />React.js</li>
+                    <li><img src={gitIcon} alt="git icon" />Git</li>
                 </ul>
             </div>
         </section>
