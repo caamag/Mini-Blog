@@ -30,7 +30,6 @@ const db = getFirestore(firebaseApp);
 
 function Home() {
 
-    const [query, setQuery] = useState('');
     const [posts, setPosts] = useState([]);
     const [newComment, setNewComment] = useState('');
 
